@@ -1,11 +1,4 @@
-# BEGIN WordPress
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.html$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]
-</IfModule>
-
-# END WordPress
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^alingdarma.eu.org [NC,OR]
+RewriteCond %{HTTP_HOST} ^alingdarma.eu.org [NC]
+RewriteRule ^(.*)$ https://alingdarma.eu.org/$1 [L,R=301,NC]
